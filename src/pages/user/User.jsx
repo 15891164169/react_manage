@@ -12,7 +12,7 @@ class User extends Component {
 
     // const {users,columns} = this.state
     return (
-      <Card title="1">
+      <Card title="users">
         {/* <Table dataSource={users} columns={}/> */}
       </Card>
     )
