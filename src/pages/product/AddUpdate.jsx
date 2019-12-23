@@ -163,7 +163,7 @@ class ProductAddUpdate extends Component {
                 { required: true, message: '请输入商品名称!' },
               ],
             })(
-              <Input placeholder="name" allowClear />,
+              <Input placeholder="请输入商品名称!" allowClear />,
             )}
           </FormItem>
 
@@ -174,7 +174,7 @@ class ProductAddUpdate extends Component {
                 { required: true, message: '请输入商品描述!' },
               ],
             })(
-              <TextArea placeholder="Autosize height" autoSize={{ minRows: 2, maxRows: 8 }} />,
+              <TextArea placeholder="请输入商品描述!" autoSize={{ minRows: 2, maxRows: 8 }} />,
             )}
           </FormItem>
 
@@ -186,7 +186,7 @@ class ProductAddUpdate extends Component {
                 { validator: this.validatorPrice }
               ],
             })(
-              <Input type="number" placeholder="price" addonAfter="元"
+              <Input type="number" placeholder="请输入商品价格!" addonAfter="元"
               />,
             )}
           </FormItem>
@@ -201,6 +201,7 @@ class ProductAddUpdate extends Component {
               <Cascader
                 options={this.state.options}
                 loadData={this.loadData}
+                placeholder="未选择"
               />,
             )}
           </FormItem>

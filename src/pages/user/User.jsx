@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 
+import { Card } from 'antd'
+
 class User extends Component {
-  
-  render () {
+  state = {
+    // users: [],
+    // columns:[]
+  }
+
+  render() {
+
+    // const {users,columns} = this.state
     return (
-      <div>User</div>
+      <Card title="1">
+        {/* <Table dataSource={users} columns={}/> */}
+      </Card>
     )
   }
 }
