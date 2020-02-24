@@ -21,11 +21,10 @@ export default class ProductDetail extends Component {
       const { data } = await reqCategory({ categoryId })
       this.setState({ categoryName: data.name })
     } else {
-      Promise.all([reqCategory({ categoryId: pCategoryId }), reqCategory({ categoryId })]).then(res => {
-        this.setState({
-          pCategoryName: res[0].data.name,
-          categoryName: res[1].data.name,
-        })
+      const data = await Promise.all([reqCategory({ categoryId: pCategoryId }), reqCategory({ categoryId })])
+      this.setState({
+        pCategoryName: data[0].data.name,
+        categoryName: data[1].data.name,
       })
     }
   }

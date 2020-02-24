@@ -14,18 +14,16 @@ class Login extends Component {
     e.preventDefault()
     this.props.form.validateFields(async (err, {username, password}) => {
       if (!err) {
-        if (username === 'admin' && password === 'admin') {
-          const { data } = await reqLogin({username, password})
+        const result = await reqLogin({ username, password })
+        if (result) {
           message.success('登陆成功', 1)
           Session.user.setItem({
-            username: data.username,
-            _id: data._id
+            username: result.data.username,
+            _id: result.data._id
           })
           setTimeout(() => {
             this.props.history.replace('/admin')
           }, 1000)
-        } else {
-          message.error('用户名或密码不正确', 1)
         }
       }
     })
